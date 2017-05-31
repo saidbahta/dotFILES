@@ -1,0 +1,10 @@
+# initialitation session and window 
+new  -s GENERAL -n MOCP mocp ~/.Download/
+neww -n RANGER ranger 
+neww -n TERMINAL
+
+new  -s EDITOR -n "VIM[]" vim
+neww -n "VIM{}" vim -O2
+neww -n "VIM()"
+split-window -v -p 25 -t 0
+neww -n TERMINAL
