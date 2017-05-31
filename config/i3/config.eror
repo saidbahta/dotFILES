@@ -1,0 +1,191 @@
+set $mod Mod4
+
+
+
+font pango:System San Francisco, FontAwesome 9
+
+floating_modifier $mod
+
+
+#Short Cut Keyboard 
+bindsym $mod+Return exec urxvt  			#mod+enter jalankan terminal=urxvt 
+bindsym $mod+q kill					
+bindsym $mod+d exec j4-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
+
+bindsym $mod+h focus left				#mod+h pindah fokus ke kiri 
+bindsym $mod+j focus down				#mod+j pindah fokus ke bawah
+bindsym $mod+k focus up					#mod+k pindah fokus ke atas
+bindsym $mod+l focus right				#mod+l pindah fokus ke kanan 
+	
+bindsym $mod+Left focus left				#mod+[arah-kiri] fokus ke kiri 
+bindsym $mod+Down focus down				#mod+[arah-bawah] fokus ke bawah	
+bindsym $mod+Up focus up				#mod+[arah-atas] fokus ke atas
+bindsym $mod+Right focus right				#mod+[arah-kanan] fokue ke kanan
+
+bindsym $mod+Shift+h move left				#mod+shift+h pindah aplikasi ke kiri 
+bindsym $mod+Shift+j move down				#mod+shift+j pindah aplikasi ke bawah
+bindsym $mod+Shift+k move up 				#mod+shift+k pindah aplikasi ke atas  
+bindsym $mod+Shift+l move right 			#mod+shift+l pindah aplikasi ke right 
+
+bindsym $mod+Shift+Left move left			#mod+shift+[arah-kiri] pindah aplikasi ke kiri 
+bindsym $mod+Shift+Down move down			#mod+shift+[arah-bawah] pindah aplikasi ke bawah 
+bindsym $mod+Shift+Up move up				#mod+shift+[arah-atas] pindah aplikasi ke atas 
+bindsym $mod+Shift+Right move right			#mod+shift+[arah-kanan] pindah aplikasi ke kanan
+
+bindsym $mod+z split h					#mod+z jadikan multiwindows horizontal 	
+bindsym $mod+v split v					#mod+v jadikan multiwindows vertikal 
+
+bindsym $mod+f fullscreen toggle			#mod+f buat windows full-layar
+
+bindsym $mod+s layout stacking				#mod+s susun open windows top-down
+bindsym $mod+w layout tabbed				#mod+w susun open windows tab
+bindsym $mod+e layout toggle split			#mod+e gunakan multiwindows 
+
+bindsym $mod+Shift+space floating toggle		#mod+shift+space buat tilling windows ke floating 
+bindsym $mod+space focus mode_toggle			#mod+space pindah fokus dari tilling ke floating
+
+# focus the parent containerdd
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+set $workspace1 "1 &#xf121;"
+set $workspace2 "2 &#xf120;"
+set $workspace3 "3 &#xf2d2;"
+set $workspace4 "4 &#xf04b;"
+set $workspace5 "5 "
+set $workspace6 "6 "
+set $workspace7 "7 "
+set $workspace8 "8 "
+set $workspace9 "9 "
+set $workspace10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9 
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+bindsym $mod+F1 move container to workspace $workspace1
+bindsym $mod+F2 move container to workspace $workspace2
+bindsym $mod+F3 move container to workspace $workspace3
+bindsym $mod+F4 move container to workspace $workspace4
+bindsym $mod+F5 move container to workspace $workspace5
+bindsym $mod+F6 move container to workspace $workspace6
+bindsym $mod+F7 move container to workspace $workspace7
+bindsym $mod+F8 move container to workspace $workspace8
+bindsym $mod+F9 move container to workspace $workspace9
+bindsym $mod+F0 move container to workspace $workspace10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+# TAMBAHAN KONFIGURASI
+
+# aplikasi di workspace 1 
+assign [class="XTerm"] $workspace1
+
+# aplikasi di workspace 2
+
+# aplikasi di workspace 3
+assign [class="Firefox"] $workspace3
+assign [class="Thunar"] $workspace3
+
+# aplikasi di workspace 4
+assign [class="TelegramDesktop"] $workspace4
+assign [class="Chromium"] $workspace4
+assign [class="vlc"] $workspace4
+
+# Bindsym Aplikasi 
+bindsym $mod+Shift+x exec i3lock
+ 
+# Startup program 
+exec --no-startup-id setxkbmap -option caps:escape
+exec --no-startup-id wicd-client
+exec_always feh --bg-scale ~/.Wallpaper/0.jpg 
+exec chromium 
+exec firefox 
+
+# Windows Color 
+#			border 		background 	text		indicator
+client.focused 		#586E75		#285577		#FEFEFE		#082F4E		
+client.unfocused	#586E75		#222222		#5D5D5D		#082F4E
+client.focused_inactive #586E75		#222222		#5D5D5D		#082F4E
+client.urgent 		#586E75 	#DC322F		#5D5D5D		#082F4E
+
+hide_edge_borders both
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	position top
+	font pango:System San Francisco Bold, FontAwesome 10.40
+       	colors {
+		background 	   #082F4E
+		separator  	   #082F4E
+		statusline 	   #FEFEFE
+		#		   #border  #bg-col  #text-col
+		focused_workspace  #082F4E  #268BD2  #FEFEFE
+		active_workspace   #082F4E  #268BD2  #FEFEFE
+		inactive_workspace #082F4E  #586E75  #CECECE
+		urgent_workspace   #082F4E  #DC322F  #FEFEFE
+ 	}
+        status_command i3status -c ~/.config/i3/i3status.conf 
+}
+
+
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous	

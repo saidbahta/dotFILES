@@ -1,0 +1,81 @@
+!FONT 
+URxvt.font: xft:Ubuntu Mono derivative Powerline:Regular:size=12.38
+URxvt.boldFont: xft:Ubuntu Mono derivative Powerline:Bold:size=12.38
+URxvt.italicFont: xft:Ubuntu Mono derivative Powerline:Italic:size=12.38
+!------------------------------------------------------------------
+!URxvt.font: xft:Inconsolata for Powerline:Medium:size=11.50
+!URxvt.boldFont: xft:Inconsolata for Powerline:Bold:size=11.50
+!URxvt.italicFont: xft:Inconsolata for Powerline:Italic:size=11.50
+!------------------------------------------------------------------
+!URxvt.font: xft:Monospace:Regular:size=11.50
+!URxvt.boldFont: xft:Monospace:Bold:size=11.50
+!URxvt.italicFont: xft:Monospace:Italic:size=11.50
+!------------------------------------------------------------------
+!URxvt.font: xft:Inconsolata for Powerline:Medium:size=11.50
+!URxvt.boldFont: xft:Inconsolata for Powerline:Bold:size=11.50
+!URxvt.italicFont: xft:Inconsolata for Powerline:Italic:size=11.50
+
+!LETTER SPACE    
+!=================================================================== 
+URxvt.letterSpace:0.90
+
+!SCROOLBAR 
+!=================================================================== 
+!URxvt.scrollStyle:rxvt
+URxvt.scrollStyle:plain
+!URxvt.saveLines:2000
+URxvt.scrollBar:false
+!URxvt.jumpScroll:true
+!URxvt.skipScroll:true
+!URxvt.scrollTtyOutput:true
+!URxvt.scrollWithBuffer:true
+!URxvt.scrollTtyKeypress:true
+!URxvt.mouseWheelScrollPage:false
+
+!COLOUR 
+!=================================================================== 
+!special
+URxvt.colorIT:#87af5f
+URxvt.colorBD:#d7d7d7
+URxvt.colorUL:#87afd7
+URxvt.fading:40
+URxvt.fadeColor:#002b36
+URxvt.pointerColorBackground:#586e75
+URxvt.pointerColorForeground:#93a1a1
+!URxvt.background:#002b36
+URxvt.foreground:white
+URxvt.cursorColor:white
+
+!BORDER  
+!=================================================================== 
+URxvt.internalBorder:6
+
+!CURSOR    
+!=================================================================== 
+URxvt.cursorBlink:true
+
+!TRANSPARENCY   
+!=================================================================== 
+!URxvt.depth:32 
+URxvt.transparent:true
+URxvt.shading: 50
+URxvt.inheritPixmap:true
+
+!urxvt-perls @  http://github.com/muennich/urxvt-perls
+!==================================================================
+URxvt.perl-lib:/usr/lib/urxvt/perl/urxvt-perls/
+URxvt.perl-ext-common:...,keyboard-select
+URxvt.keysym.M-Escape:perl:keyboard-select:activate
+URxvt.keysym.M-s:perl:keyboard-select:search
+! MANUAL 
+! -------
+! h/j/k/l:    Move cursor left/down/up/right (also with arrow keys)
+! g/G/0/^/$/H/M/L/f/F/;/,/w/W/b/B/e/E: More vi-like cursor movement keys
+! '/'/?:      Start forward/backward search
+! n/N:        Repeat last search, N: in reverse direction
+! Ctrl-f/b:   Scroll down/up one screen
+! Ctrl-d/u:   Scroll down/up half a screen
+! v/V/Ctrl-v: Toggle normal/linewise/blockwise selection
+! y/Return:   Copy selection to primary buffer, Return: quit afterwards
+! Y:          Copy selected lines to primary buffer or cursor line and quit
+! q/Escape:   Quit keyboard selection mode
