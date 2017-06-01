@@ -1,7 +1,7 @@
 # initialitation session and window 
 new  -s GENERAL -n MOCP mocp ~/.Download/
-neww -n RANGER ranger 
 neww -n TERMINAL
+neww -n RANGER ranger 
 
 new  -s EDITOR -n "VIM[]" vim
 neww -n "VIM{}" vim -O2
