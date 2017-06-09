@@ -1,11 +1,11 @@
 # initialitation session and window 
-new  -s EDITOR -n "VIM[]" vim
-neww -n "VIM{}" vim -O2
+new  -s EDITOR -n "VIM[]" vim -O2
+neww -n "VIM{}" 
 neww -n "VIM()"
-split-window -v -p 25 -t 0
-neww -n TERMINAL
 
 new  -s GENERAL -n MOCP mocp ~/.Download/
-neww -n TERMINAL
 neww -n RANGER ranger 
+neww -n TERMINAL
+split-window -v -p 25 -t 0
+neww -n TERMINAL
 
