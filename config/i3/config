@@ -164,24 +164,25 @@ bindsym $mod+r mode "resize"
 
 # TAMBAHAN KONFIGURASI
 # aplikasi di workspace 1 
-assign [class="XTerm"] $workspace1
+#assign [class="XTerm"] $workspace1
 
 # aplikasi di workspace 2
 
 # aplikasi di workspace 3
-assign [class="TelegramDesktop"] $workspace3
-assign [class="Chromium"] $workspace3
-assign [class="Firefox"] $workspace3
+#assign [class="TelegramDesktop"] $workspace3
+#assign [class="Chromium"] $workspace3
+#assign [class="Firefox"] $workspace3
 
 # aplikasi di workspace 4
-assign [class="Thunar"] $workspace4
-assign [class="vlc"] $workspace4
+#assign [class="Thunar"] $workspace4
+#assign [class="vlc"] $workspace4
 
 # Bindsym Aplikasi 
 bindsym $moda+space exec i3lock
  
 # Startup program 
-exec --no-startup-id setxkbmap -option caps:escape
+exec --no-startup-id setxkbmap -option caps:swapescape
+exec --no-startup-id setxkbmap -option escape:swapcaps
 exec --no-startup-id wicd-client
 exec_always feh --bg-scale ~/.Wallpaper/0.jpg 
 exec chromium 
